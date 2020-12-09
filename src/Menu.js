@@ -2,7 +2,7 @@ import {A, navigate} from "hookrouter";
 import React from "react";
 import {useAuth} from "./auth";
 import {Button, Menu, MenuItem, Box, List, ListItem} from '@material-ui/core';
-import {useStyles} from "./App";
+import {useStyles} from "./style";
 
 function SignOutButton() {
     let auth = useAuth();
@@ -56,6 +56,7 @@ export function SimpleMenu() {
                         <MenuItem onClick={handleClose}><A href="/register">Register Page</A></MenuItem>
                         <MenuItem onClick={handleClose}><A href="/public">Public Page</A></MenuItem>
                         <MenuItem onClick={handleClose}><A href="/protected">Protected Page</A></MenuItem>
+                        <MenuItem onClick={handleClose}><A href="/scan">Scan Setup</A></MenuItem>
                     </Menu>
                 </Box>
                 <Box p={1} bgcolor="orange">

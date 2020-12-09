@@ -1,5 +1,5 @@
 import React from "react";
-import {useStyles} from "./App";
+import {useStyles} from "./style";
 import {Box} from "@material-ui/core";
 
 export function MainPage() {

@@ -7,6 +7,21 @@ module.exports = {
         path: path.join(__dirname, "/dist"),
         filename: "index-bundle.js"
     },
+    devServer: {
+        port: 8000,
+        proxy:{
+            '/api/':{
+                target:{
+                    host: '127.0.0.1',
+                    port: 3000,
+                    protocol: 'http',
+                    headers: {
+                        "Connection": "keep-alive",
+                    },
+                }
+            }
+        }
+    },
     module: {
         rules: [
             {

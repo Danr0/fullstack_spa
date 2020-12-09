@@ -4,7 +4,7 @@ import {Button, FormControl, IconButton, Slide, TextField} from "@material-ui/co
 import {A} from "hookrouter";
 import {Alert} from "@material-ui/lab";
 import CloseIcon from "@material-ui/icons/Close";
-import {useStyles} from "./App";
+import {useStyles} from "./style";
 
 
 export function RegisterPage() {

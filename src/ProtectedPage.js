@@ -2,7 +2,7 @@ import React from "react";
 import {useAuth} from "./auth";
 import {A} from 'hookrouter';
 import { Box } from "@material-ui/core";
-import { useStyles } from "./App";
+import {useStyles} from "./style";
 
 
 export function ProtectedPage() {

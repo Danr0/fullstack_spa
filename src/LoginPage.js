@@ -4,7 +4,7 @@ import {A} from 'hookrouter';
 import {Button, TextField, FormControl, Collapse, IconButton, Slide, Box} from '@material-ui/core';
 import { Alert, AlertTitle,  } from '@material-ui/lab'
 import CloseIcon from '@material-ui/icons/Close';
-import {useStyles} from "./App";
+import {useStyles} from "./style";
 
 
 export function LoginPage() {
