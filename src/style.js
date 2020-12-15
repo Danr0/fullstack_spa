@@ -60,6 +60,11 @@ export const useStyles = makeStyles({
     text_style: {
         color: 'black',
         'font-family': "Times New Roman",
+    },
+    list_item: {
+        color: 'black',
+        background: 'orange',
+        display: 'flex',
     }
 
 });

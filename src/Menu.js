@@ -57,6 +57,7 @@ export function SimpleMenu() {
                         <MenuItem onClick={handleClose}><A href="/public">Public Page</A></MenuItem>
                         <MenuItem onClick={handleClose}><A href="/protected">Protected Page</A></MenuItem>
                         <MenuItem onClick={handleClose}><A href="/scan">Scan Setup</A></MenuItem>
+                        <MenuItem onClick={handleClose}><A href="/scans">Scans</A></MenuItem>
                     </Menu>
                 </Box>
                 <Box p={1} bgcolor="orange">

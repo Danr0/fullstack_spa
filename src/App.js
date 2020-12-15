@@ -9,6 +9,7 @@ import {ProvideAuth} from "./auth";
 import {MainPage} from "./MainPage";
 import {SimpleMenu} from "./Menu";
 import {ScanSetup} from "./ScanSetup";
+import {GetScan} from "./GetScan";
 import { useStyles} from "./style";
 import { Box } from "@material-ui/core";
 //import "./App.css"
@@ -23,7 +24,8 @@ const routes = {
   '/register': () => <RegisterPage />,
   '/public': () => <PublicPage />,
   '/protected': () => <ProtectedPage />,
-  '/scan': () => <ScanSetup />
+  '/scan': () => <ScanSetup />,
+    '/scans': () => <GetScan />
 };
 
 

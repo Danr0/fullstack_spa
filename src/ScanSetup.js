@@ -78,7 +78,13 @@ export function ScanSetup() {
     }
 
     const handleSubmit = event => {
-        fetch("/api/scan")
+        let data = {"urls": values.val};
+        console.log(JSON.stringify(data));
+        fetch("/api/scan", {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        })
                 .then(res => res.json())
                 .then(
                     (result) => {
