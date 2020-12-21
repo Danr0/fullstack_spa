@@ -17,7 +17,8 @@ export function GetScan() {
     const classes = useStyles();
 
     const [id, setId] = useState("");
-    const [result, setResult] = useState("")
+    const [result, setResult] = useState("");
+    const [headers, setHeaders] = useState("");
 
 
 
@@ -27,7 +28,18 @@ export function GetScan() {
             .then(res => res.json())
             .then(
                 (result) => {
-                    setResult(JSON.stringify(result).substring(0,50));
+                    //setResult(JSON.stringify(result).substring(0,50));
+                    setResult(result);
+                    //console.log(JSON.stringify(result))
+                    let heds = "";
+                    for (let i = 0; i < result["issue_events"].length; i++) {
+                        //heds+=(result["issue_events"][i]["issue"]["name"]);
+                        heds+=(<ListItem button>
+                                    <ListItemText primary={result["issue_events"][i]["issue"]["name"]}/>
+                                </ListItem>
+                        )
+                    }
+                    setHeaders(heds);
                 },
                 (error) => {
                     setResult("")
@@ -36,6 +48,8 @@ export function GetScan() {
 
         event.preventDefault();
     }
+
+
 
     return (<div><FormControl className={classes.input_form}>
         <h1 className={classes.text}>Get scan</h1>
@@ -48,10 +62,12 @@ export function GetScan() {
     </FormControl>
         { result!=="" &&
             <List component="nav" className={classes.list_item} aria-label="mailbox folders">
-                <ListItem button>
-                    <ListItemText primary={result}/>
-                </ListItem>
-                <Divider/>
+                {result["issue_events"].map((issue) => (
+                    <ListItem button>
+                        <ListItemText primary={issue["issue"]["name"]}/>
+                    </ListItem>
+                ))}
+
             </List>
         }
     </div>)

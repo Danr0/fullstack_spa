@@ -65,6 +65,7 @@ export const useStyles = makeStyles({
         color: 'black',
         background: 'orange',
         display: 'flex',
+        'flex-direction': 'column',
     }
 
 });
