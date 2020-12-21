@@ -66,6 +66,10 @@ export const useStyles = makeStyles({
         background: 'orange',
         display: 'flex',
         'flex-direction': 'column',
+    },
+    data: {
+        'max-width' : '300px',
+        'overflow-wrap': 'break-word',
     }
 
 });

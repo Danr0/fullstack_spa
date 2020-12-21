@@ -9,6 +9,7 @@ import Divider from "@material-ui/core/Divider";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItem from "@material-ui/core/ListItem";
 import List from "@material-ui/core/List";
+import Typography from "@material-ui/core/Typography";
 
 
 export function GetScan() {
@@ -19,6 +20,7 @@ export function GetScan() {
     const [id, setId] = useState("");
     const [result, setResult] = useState("");
     const [headers, setHeaders] = useState("");
+    const [shown, setShown] = useState("");
 
 
 
@@ -59,17 +61,19 @@ export function GetScan() {
         }}/>
 
         <Button className={classes.button} onClick={handleSubmit}>Get Scan</Button>
-    </FormControl>
+
         { result!=="" &&
             <List component="nav" className={classes.list_item} aria-label="mailbox folders">
                 {result["issue_events"].map((issue) => (
-                    <ListItem button>
+                    <ListItem button onClick={() => setShown(JSON.stringify(issue["issue"]))}>
                         <ListItemText primary={issue["issue"]["name"]}/>
                     </ListItem>
                 ))}
 
             </List>
         }
+        { shown!=="" && <Typography className={classes.data}>{shown}</Typography>}
+    </FormControl>
     </div>)
 
 }
